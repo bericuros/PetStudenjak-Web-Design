@@ -1,5 +1,21 @@
-let oglasi = []
-let poslId = 1;
+let oglasi = [{
+    "ime" : "Dzoni",
+    "opis" : "Nestao mi ker",
+    "telefon" : "+381/63-566-309",
+    "id" : 1,
+    "komentari" : [
+        {
+            "korisnik" : "koki_bg", 
+            "tekst" : "Hhahahhahahahahhah"
+        },
+        {
+            "korisnik" : "_kolja_",
+            "tekst" : "najjace hahahha xD"
+        }
+    ]
+}]
+
+let poslId = 2;
 
 function ucitajOglase(){
     if(localStorage.getItem("oglasi") == null){
@@ -29,7 +45,8 @@ function slusajDugme(){
             "ime" : ime,
             "opis" : opis,
             "telefon" : telefon,
-            "id" : poslId
+            "id" : poslId,
+            "komentari" : []
         }
 
         poslId++;

@@ -1,4 +1,32 @@
-let oglasi = null;
+let oglasi = [{
+    "ime" : "Dzoni",
+    "opis" : "Nestao mi ker",
+    "telefon" : "+381/63-566-309",
+    "id" : 1,
+    "komentari" : [
+        {
+            "korisnik" : "koki_bg", 
+            "tekst" : "Hhahahhahahahahhah"
+        },
+        {
+            "korisnik" : "_kolja_",
+            "tekst" : "najjace hahahha xD"
+        }
+    ]
+}]
+
+let poslId = 2;
+
+function ucitajOglase(){
+    if(localStorage.getItem("oglasi") == null){
+        localStorage.setItem("poslId", poslId);
+        localStorage.setItem("oglasi", JSON.stringify(oglasi));
+    }
+    else{
+        oglasi = JSON.parse(localStorage.getItem("oglasi"));
+        poslId = JSON.parse(localStorage.getItem("poslId"));
+    }
+}
 
 function dodajOglase(){
 
@@ -60,5 +88,6 @@ function dodajOglase(){
 }
 
 $(document).ready(function(){
+    ucitajOglase();
     dodajOglase();
 })
