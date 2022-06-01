@@ -1,3 +1,9 @@
+function download(){
+    const element = document.getElementById("body");
+
+    html2pdf().from(element).save();
+}
+
 function prikaziKomentare(td, komentari, novi){
 
     $(".red").remove();
@@ -11,7 +17,7 @@ function prikaziKomentare(td, komentari, novi){
     for(let i = 0; i < komentari.length; i++){
         let newTr = $("<tr></tr>").addClass("red");
         let newTd = $("<td></td>");
-        newTd.text(komentari[i]["korisnik"]);
+        newTd.text(komentari[i]["korisnik"] + ": ");
         newTr.append(newTd);
         newTd = $("<td></td>");
         newTd.text(komentari[i]["tekst"]);

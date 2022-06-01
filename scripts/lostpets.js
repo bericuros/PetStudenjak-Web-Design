@@ -3,6 +3,7 @@ let oglasi = [{
     "opis" : "Nestao mi ker",
     "telefon" : "+381/63-566-309",
     "id" : 1,
+    "korisnik": "Aki",
     "komentari" : [
         {
             "korisnik" : "koki_bg", 
@@ -33,8 +34,7 @@ function dodajOglase(){
     let bodyDiv = $("#body")
     bodyDiv.append( $("<hr>"))
     oglasi = JSON.parse(localStorage.getItem("oglasi"));
-    oglasi.reverse();
-    for(let i = 0; i < oglasi.length; i++){
+    for(let i = oglasi.length - 1; i >= 0; i--){
         let newRow = $("<div></div>").addClass("row")
         let newCol = $("<div></div>").addClass("col-sm-12")
         bodyDiv.append(newRow);

@@ -3,6 +3,7 @@ let oglasi = [{
     "opis" : "Nestao mi ker",
     "telefon" : "+381/63-566-309",
     "id" : 1,
+    "korisnik": "Aki",
     "komentari" : [
         {
             "korisnik" : "koki_bg", 
@@ -46,6 +47,7 @@ function slusajDugme(){
             "opis" : opis,
             "telefon" : telefon,
             "id" : poslId,
+            "korisnik": "You",
             "komentari" : []
         }
 
