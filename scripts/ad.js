@@ -42,7 +42,7 @@ $(document).ready(function(){
     }
 
     let newRow = $("<div></div>").addClass("row")
-    let newCol = $("<div></div>").addClass("col-sm-12")
+    let newCol = $("<div></div>").addClass("offset-md-1").addClass("col-md-8").addClass("col-sm-12")
     bodyDiv.append(newRow);
     newRow.append(newCol);
 
@@ -51,7 +51,7 @@ $(document).ready(function(){
     let newTable = $("<table></table>");
 
     let newTr = $("<tr></tr>");
-    let newTd = $("<td></td>");
+    let newTd = $("<td></td>")
     newTd.text("Pet name: ");
     newTr.append(newTd);
     newTd = $("<td></td>");

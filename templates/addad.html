@@ -76,43 +76,29 @@
 
     <div class="container-fluid" id="body">
 
-        <div class="row text-center">
-            <div class="col-sm-12">
-                <h3>Lost a pet?</h3>
-                <div>Please, fill this form:</div>
-            </div>
-        </div>
-        <br>
-        <div class="row text-center">
-            <div class="offset-sm-4 col-sm-6">
-
-                    <table>
-                        <tr>
-                            <td>Pet name: </td>
-                            <td>
-                                <input id="name" type="text">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Pet description: </td>
-                            <td>
-                                <textarea id="description" cols="30" rows="6"></textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Contact phone: </td>
-                            <td>
-                                <input id="phone" type="text">
-                            </td>
-                        </tr>
-                    </table>
-                    
-               
+        <div class="row" id="lost_a_pet">
+            <div class="offset-md-2 col-md-8 col-sm-12 text-center">
+                <h2>
+                    <img src="../images/paw.jpg" width="10%" height="10%" alt="">
+                    <br/>
+                    Lost a pet?
+                </h2>
+                <div class="italic_text">
+                    Please, fill this form:
+                </div>
             </div>
         </div>
 
-        <div class="row text-center">
-            <div class="col-sm-12">
+        <div class="row">
+            <div class="offset-md-2 col-md-8 col-sm-12 text-center">
+                <input id="name" type="text" placeholder="Pet name..."><br/>
+                <textarea id="description" cols="30" rows="6" placeholder="Description..."></textarea><br/>
+                <input id="phone" type="text" placeholder="Contact phone..."><br/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="offset-md-2 col-md-8 col-sm-12 text-center">
                 <button class="btn btn-primary" id="submit">Submit</button>
             </div>
         </div>

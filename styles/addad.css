@@ -1,9 +1,23 @@
-table {
-    width: 80%;
-   
+#name {
+    padding: 5px;
+    margin: 10px;
 }
 
-td{
-    align-items: center;
-    padding-bottom: 40px;
+#description {
+    padding: 10px;
+    margin: 10px;
+}
+
+#phone {
+    padding: 5px;
+    margin: 10px;
+}
+
+#submit {
+    padding: 5px;
+    margin: 10px;
+}
+
+#lost_a_pet {
+    margin-bottom: 40px;
 }

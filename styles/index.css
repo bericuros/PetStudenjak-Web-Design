@@ -129,3 +129,15 @@ footer {
     text-decoration: underline;
     font-weight: bold;
 }
+
+
+
+/* ========================== */
+
+.bolded_text {
+    font-weight: bold;
+}
+
+.italic_text {
+    font-style: italic;
+}
