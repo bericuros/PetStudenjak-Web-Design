@@ -62,21 +62,21 @@ $(document).ready(function() {
     function initializeObjects() {
         birds.push({
             "name": "Parakeet LeBron",
-            "description": "Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna. Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna.",
+            "description": "A parakeet is any one of many small to medium-sized species of parrot, in multiple genera, that generally has long tail feathers.",
             "weight": 0.1,
             "age": 27,
             "link": "parakeet.html",
         })
         birds.push({
             "name": "Cockatoo Chris",
-            "description": "Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna. Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna.",
+            "description": "Cockatoos are recognisable by the prominent crests and curved bills. Their plumage is generally less colourful than that of other parrots, being mainly white, grey or black and often with coloured features in the crest, cheeks or tail.",
             "weight": 0.6,
             "age": 12,
             "link": "cockatoo.html",
         })
         birds.push({
             "name": "Lovebird Dwyane",
-            "description": "Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna. Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna.",
+            "description": "They are small parrots, with rounded heads and relatively large beaks. All of the different species are green, though some have orange, yellow, gray, black, or red on their heads and necks. Most Lovebirds are five or six inches long, and weigh about two ounces.",
             "weight": 0.05,
             "age": 50,
             "link": "lovebird.html",
@@ -105,8 +105,7 @@ $(document).ready(function() {
             let col = $("<div></div>").addClass("offset-md-2").addClass("col-md-8").addClass("col-sm-12").addClass("text-left")
             let link = $("<a></a>").addClass("link_dizajn_jedan").attr("href", birds[i]["link"])
             let name = $("<h2></h2>").append(birds[i]["name"])
-            let paragraph = $("<p></p>").append(birds[i]["description"]).append("<br/>").append("Weight: ").
-                append(birds[i]["weight"]).append("kg").append("<br/>").append("Age: ").append((birds[i]["age"] - birds[i]["age"] % 12) / 12).
+            let paragraph = $("<p></p>").append(birds[i]["description"]).append("<br/>").append("Age: ").append((birds[i]["age"] - birds[i]["age"] % 12) / 12).
                 append("y").append(birds[i]["age"] % 12).append("m").append("<br/>")
             let read_more_link = $("<a></a>").addClass("read_more").attr("href", birds[i]["link"]).append("See more")
 

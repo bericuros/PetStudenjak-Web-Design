@@ -62,21 +62,21 @@ $(document).ready(function() {
     function initializeObjects() {
         dogs.push({
             "name": "Dalmatian Buddy",
-            "description": "Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna. Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna.",
+            "description": "The Dalmatian is a graceful, medium-sized dog with a sleek, muscular body. The tail is fairly long and has a slight, upward curve. The coat is short and dense, with brown or black spots on white. The Dalmatian sheds heavily, even though the coat is short. Frequent brushing is required to control shedding.",
             "weight": 25,
             "age": 29,
             "link": "dalmatian.html",
         })
         dogs.push({
             "name": "Corgi Koko",
-            "description": "Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna. Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna.",
+            "description": "The Pembroke Welsh corgi is a small- to medium-sized herding dog of short stature and sturdy build. Known for its low-set body, large erect ears, and stubby tail, the Pembroke also has a reputation for being a wonderful companion. Pembroke Welsh corgis are achondroplastic, a dwarf breed with shortened legs.",
             "weight": 12,
             "age": 72,
             "link": "corgi.html",
         })
         dogs.push({
             "name": "Labrador Rocky",
-            "description": "Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna. Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna.",
+            "description": "Labrador retrievers are easily recognized by their broad head, drop ears and large, expressive eyes. Two trademarks of the Lab are the thick but fairly short double coat, which is very water repellent, and the well known \"otter tail.\" The tail is thick and sturdy and comes off the topline almost straight.",
             "weight": 30,
             "age": 50,
             "link": "labrador.html",
@@ -105,8 +105,7 @@ $(document).ready(function() {
             let col = $("<div></div>").addClass("offset-md-2").addClass("col-md-8").addClass("col-sm-12").addClass("text-left")
             let link = $("<a></a>").addClass("link_dizajn_jedan").attr("href", dogs[i]["link"])
             let name = $("<h2></h2>").append(dogs[i]["name"])
-            let paragraph = $("<p></p>").append(dogs[i]["description"]).append("<br/>").append("Weight: ").
-                append(dogs[i]["weight"]).append("kg").append("<br/>").append("Age: ").append((dogs[i]["age"] - dogs[i]["age"] % 12) / 12).
+            let paragraph = $("<p></p>").append(dogs[i]["description"]).append("<br/>").append("Age: ").append((dogs[i]["age"] - dogs[i]["age"] % 12) / 12).
                 append("y").append(dogs[i]["age"] % 12).append("m").append("<br/>")
             let read_more_link = $("<a></a>").addClass("read_more").attr("href", dogs[i]["link"]).append("See more")
 

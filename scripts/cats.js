@@ -62,21 +62,21 @@ $(document).ready(function() {
     function initializeObjects() {
         cats.push({
             "name": "Persian Ronnie",
-            "description": "Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna. Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna.",
+            "description": "Persian cats are medium-sized, usually weigh between seven and 12 pounds, and measure from 10-15 inches tall. They have a rounded head, small, rounded ears, and big eyes. They also typically have a flat and pushed-in looking face with chubby cheeks.",
             "weight": 4.2,
             "age": 37,
             "link": "persian.html",
         })
         cats.push({
             "name": "Bengal Jay",
-            "description": "Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna. Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna.",
+            "description": "Bengal cats have smallish, round heads, large eyes, and striking facial marking. They have strong muscular bodies and a streamlined appearance much like their Asian Leopard ancestors. Their hind legs are longer than their front legs, which helps give them a powerful but graceful stride.",
             "weight": 3.5,
             "age": 39,
             "link": "bengal.html",
         })
         cats.push({
             "name": "Maine Coon Dexter",
-            "description": "Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna. Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna.",
+            "description": "The Maine Coon is a large and sociable cat, hence its nickname, \"the gentle giant.\" It is characterized by a prominent ruff along its chest, robust bone structure, rectangular body shape, an uneven two-layered coat with longer guard hairs over a silky satin undercoat, and a long, bushy tail.",
             "weight": 7,
             "age": 98,
             "link": "mainecoon.html",
@@ -105,8 +105,7 @@ $(document).ready(function() {
             let col = $("<div></div>").addClass("offset-md-2").addClass("col-md-8").addClass("col-sm-12").addClass("text-left")
             let link = $("<a></a>").addClass("link_dizajn_jedan").attr("href", cats[i]["link"])
             let name = $("<h2></h2>").append(cats[i]["name"])
-            let paragraph = $("<p></p>").append(cats[i]["description"]).append("<br/>").append("Weight: ").
-                append(cats[i]["weight"]).append("kg").append("<br/>").append("Age: ").append((cats[i]["age"] - cats[i]["age"] % 12) / 12).
+            let paragraph = $("<p></p>").append(cats[i]["description"]).append("<br/>").append("Age: ").append((cats[i]["age"] - cats[i]["age"] % 12) / 12).
                 append("y").append(cats[i]["age"] % 12).append("m").append("<br/>")
             let read_more_link = $("<a></a>").addClass("read_more").attr("href", cats[i]["link"]).append("See more")
 
