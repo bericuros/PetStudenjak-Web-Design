@@ -3,15 +3,17 @@ let oglasi = [{
     "opis" : "Nestao mi ker",
     "telefon" : "+381/63-566-309",
     "id" : 1,
-    "korisnik" : "Aki",
+    "korisnik": "Aki",
     "komentari" : [
         {
             "korisnik" : "koki_bg", 
-            "tekst" : "Hhahahhahahahahhah"
+            "tekst" : "Hhahahhahahahahhah",
+            "vreme": "22-05-2022 17:42:17",
         },
         {
             "korisnik" : "_kolja_",
-            "tekst" : "najjace hahahha xD"
+            "tekst" : "najjace hahahha xD",
+            "vreme": "22-05-2022 18:00:33",
         }
     ]
 }]
