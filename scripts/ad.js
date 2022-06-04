@@ -1,6 +1,5 @@
 function download(){
-    const element = document.getElementById("body");
-
+    const element = document.getElementById("ad_ad");
     html2pdf().from(element).save();
 }
 
@@ -28,55 +27,82 @@ function prikaziKomentare(td, komentari, novi){
 }
 
 $(document).ready(function(){
-    let bodyDiv = $("#body")
-    oglasi = JSON.parse(localStorage.getItem("oglasi"));
-    id = parseInt(localStorage.getItem("id"))
 
-    oglas = null;
+    let oglasi = []
+    let id = null
+    let oglas = null
+    let komentari = []
 
-    for(let i = 0; i < oglasi.length; i++){
-        if(oglasi[i]["id"] == id){
-            oglas = oglasi[i];
-            break;
+    initialization()
+
+    function initialization() {
+        initializeAd()
+        initializeTable()
+        initializeComments()
+    }
+
+    function initializeAd() {
+        oglasi = JSON.parse(localStorage.getItem("oglasi"));
+        id = parseInt(localStorage.getItem("id"))
+    
+        for(let i = 0; i < oglasi.length; i++){
+            if(oglasi[i]["id"] == id){
+                oglas = oglasi[i];
+                break;
+            }
         }
     }
 
-    let newRow = $("<div></div>").addClass("row")
-    let newCol = $("<div></div>").addClass("offset-md-1").addClass("col-md-8").addClass("col-sm-12")
-    bodyDiv.append(newRow);
-    newRow.append(newCol);
+    function initializeTable() {
+        $("#ad_name_text").text("Pet name:")
+        $("#ad_name").text(oglas["ime"])
+        $("#ad_description_text").text("Pet description:")
+        $("#ad_description").text(oglas["opis"])
+        $("#ad_phone_text").text("Contact phone:")
+        $("#ad_phone").text(oglas["telefon"])
+    }
 
-    let newDiv = $("<div></div>");
-    newCol.append(newDiv);
-    let newTable = $("<table></table>");
+    function initializeComments() {
+        $(".ad_comment").click(function() {
+            let tekst = $("#ad_textarea").val()
+            if(tekst != ""){
+                let today = new Date()
+                oglas["komentari"].push({
+                    "korisnik" : "You",
+                    "tekst" : tekst,
+                    "vreme": String(today.getDate()).padStart(2, "0") + "-" + 
+                        String(today.getMonth() + 1).padStart(2, "0") + "-" + today.getFullYear() + " " + 
+                        String(today.getHours()).padStart(2, "0") + ":" + String(today.getMinutes()).padStart(2, "0") + ":" + 
+                        String(today.getSeconds()).padStart(2, "0"),
+                })
+                localStorage.setItem("oglasi", JSON.stringify(oglasi))
+                $("#ad_textarea").val("")
+                showComments()
+            }
+        })
+        showComments()
+    }
 
-    let newTr = $("<tr></tr>");
-    let newTd = $("<td></td>")
-    newTd.text("Pet name: ");
-    newTr.append(newTd);
-    newTd = $("<td></td>");
-    newTd.text(oglas["ime"]);
-    newTr.append(newTd);
-    newTable.append(newTr);
+    function showComments() {
+        $(".comments_row").remove()
+        komentari = oglas["komentari"]
 
-    newTr = $("<tr></tr>");
-    newTd = $("<td></td>");
-    newTd.text("Pet description: ");
-    newTr.append(newTd);
-    newTd = $("<td></td>");
-    newTd.text(oglas["opis"]);
-    newTr.append(newTd);
-    newTable.append(newTr);
+        let table = $("#ad_all_comments")
+        for (let i = komentari.length - 1; i >= 0; i --) {
+            let row = $("<tr></tr>").addClass("comments_row")
+            let col_zero = $("<td></td>").append(komentari[i]["vreme"])
+            let col_one = $("<td></td>").append(komentari[i]["korisnik"])
+            let col_two = $("<td></td>").append(komentari[i]["tekst"])
 
-    newTr = $("<tr></tr>");
-    newTd = $("<td></td>");
-    newTd.text("Contact phone: ");
-    newTr.append(newTd);
-    newTd = $("<td></td>");
-    newTd.text(oglas["telefon"]);
-    newTr.append(newTd);
-    newTable.append(newTr);
-    newDiv.append(newTable);
+            if (komentari[i]["korisnik"] == "You") col_one.addClass("you_korisnik")
+            row.append(col_zero)
+            row.append(col_one)
+            row.append(col_two)
+            table.append(row)
+        }
+    }
+
+    /*
 
     newDiv = $("<div></div>");
     
@@ -112,6 +138,6 @@ $(document).ready(function(){
     newDiv = $("<div></div>").attr("id", "comdiv");
     bodyDiv.append(newDiv);
     prikaziKomentare(newDiv, oglas["komentari"], 0);
-    
+  */  
 
 })

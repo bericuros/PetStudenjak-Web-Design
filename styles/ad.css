@@ -1,0 +1,40 @@
+#ad_title {
+    margin-bottom: 40px;
+}
+
+.ad_text {
+    font-weight: bold;
+}
+
+td {
+    vertical-align: middle;
+}
+
+#ad_comments {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.ad_download {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.ad_comment {
+    margin-top: 20px;
+}
+
+#ad_all_comments {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20px;
+}
+
+.you_korisnik {
+    color: blue;
+    font-style: italic;
+}
+
+#ad_comments_header {
+    background-color: lightgray;
+}

@@ -7,11 +7,13 @@ let oglasi = [{
     "komentari" : [
         {
             "korisnik" : "koki_bg", 
-            "tekst" : "Hhahahhahahahahhah"
+            "tekst" : "Hhahahhahahahahhah",
+            "vreme": "22-05-2022 17:42:17",
         },
         {
             "korisnik" : "_kolja_",
-            "tekst" : "najjace hahahha xD"
+            "tekst" : "najjace hahahha xD",
+            "vreme": "22-05-2022 18:00:33",
         }
     ]
 }]
