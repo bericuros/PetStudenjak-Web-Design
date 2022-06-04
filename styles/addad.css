@@ -1,16 +1,19 @@
 #name {
     padding: 5px;
     margin: 10px;
+    width: 40%;
 }
 
 #description {
     padding: 10px;
     margin: 10px;
+    width: 40%;
 }
 
 #phone {
     padding: 5px;
     margin: 10px;
+    width: 40%;
 }
 
 #submit {
