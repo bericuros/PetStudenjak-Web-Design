@@ -103,12 +103,12 @@ footer {
     font-size: 110%;
 }
 
-.tekst_jezik:hover {
-    font-size: 105% !important;
-}
-
 .navbar_dropdown_button:hover {
     font-size: 110%;
+}
+
+.tekst_jezik:hover {
+    font-size: 105% !important;
 }
 
 /* ---------- BODY ---------- */
