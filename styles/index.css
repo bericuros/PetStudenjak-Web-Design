@@ -13,19 +13,19 @@ header {
 
 #logo_slika {
     width: 115px;
-    height: 100px;
+    height: 100%;
 }
 
 #navbar_element {
-    margin-top: 35px;
+    padding-top: 35px;
     font-size: 15px;
 }
 
 #navbar_link {
     color: #211812;
     text-decoration: none;
+    vertical-align: middle;
 }
-
 .active_link {
     color: blue !important;
 }
@@ -33,6 +33,7 @@ header {
 .tekst_jezik {
     font-size: 13px !important;
 }
+
 
 /* ---------- FOOTER ---------- */
 
@@ -98,6 +99,17 @@ footer {
     background-color: #dddddd;
 }
 
+#navbar_link:hover {
+    font-size: 110%;
+}
+
+.tekst_jezik:hover {
+    font-size: 105% !important;
+}
+
+.navbar_dropdown_button:hover {
+    font-size: 110%;
+}
 
 /* ---------- BODY ---------- */
 
