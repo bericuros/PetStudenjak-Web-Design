@@ -37,48 +37,52 @@ function dodajOglase(){
     bodyDiv.append( $("<hr>"))
     oglasi = JSON.parse(localStorage.getItem("oglasi"));
     for(let i = oglasi.length - 1; i >= 0; i--){
+        bodyDiv = $("#body")
         let newRow = $("<div></div>").addClass("row")
-        let newCol = $("<div></div>").addClass("col-sm-12")
+        let newCol = $("<div></div>").addClass("offset-md-4").addClass("col-md-4").addClass("col-sm-12")
         bodyDiv.append(newRow);
         newRow.append(newCol);
         bodyDiv.append( $("<hr>"))
 
-        let newDiv = $("<div></div>");
+        let newDiv = $("<div></div>").addClass("tableClass");
         newCol.append(newDiv);
-        let newTable = $("<table></table>");
+        let newTable = $("<table></table>").addClass("text-center");
 
         let newTr = $("<tr></tr>");
         let newTd = $("<td></td>");
-        newTd.text("Pet name: ");
+        newTd.text("Pet name: ").addClass("left");
         newTr.append(newTd);
         newTd = $("<td></td>");
-        newTd.text(oglasi[i]["ime"]);
+        newTd.text(oglasi[i]["ime"]).addClass("right");
         newTr.append(newTd);
         newTable.append(newTr);
 
         newTr = $("<tr></tr>");
         newTd = $("<td></td>");
-        newTd.text("Pet description: ");
+        newTd.text("Pet description: ").addClass("left");
         newTr.append(newTd);
         newTd = $("<td></td>");
-        newTd.text(oglasi[i]["opis"]);
+        newTd.text(oglasi[i]["opis"]).addClass("right");
         newTr.append(newTd);
         newTable.append(newTr);
 
         newTr = $("<tr></tr>");
         newTd = $("<td></td>");
-        newTd.text("Contact phone: ");
+        newTd.text("Contact phone: ").addClass("left");
         newTr.append(newTd);
         newTd = $("<td></td>");
-        newTd.text(oglasi[i]["telefon"]);
+        newTd.text(oglasi[i]["telefon"]).addClass("right");
         newTr.append(newTd);
         newTable.append(newTr);
 
+        newTr = $("<tr></tr>");
+        newTd = $("<td></td>").attr("colspan", 2);
+        newButton = $("<button></button>").addClass("btn").addClass("btn-warning").text("Details");
+        newTr.append(newTd);
+        newTd.append(newButton);
+        newTable.append(newTr);
         newDiv.append(newTable);
 
-        newButton = $("<button></button>").addClass("btn").addClass("btn-warning").text("Details");
-
-        newDiv.append(newButton);
 
         newButton.click(function(){
             localStorage.setItem("id", oglasi[i]["id"]);

@@ -1,0 +1,27 @@
+.left{
+    text-align: left;
+    font-weight: bold;
+}
+
+.leftCom{
+    text-align: left;
+    /* color: cadetblue; */
+}
+
+.rightCom{
+    text-align: right;
+    /* color: cadetblue; */
+}
+
+.right{
+    font-style: italic;
+    text-align: right;
+} 
+
+table{
+    width: 100%;
+}
+
+.deleteClass{
+    text-align: right;
+}

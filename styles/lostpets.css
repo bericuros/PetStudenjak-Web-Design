@@ -1,0 +1,16 @@
+ .left{
+    /* width: 50%; */
+    text-align: left;
+    font-weight: bold;
+}
+
+.right{
+    /* width: 50%; */
+    font-style: italic;
+    text-align: right;
+} 
+
+table{
+    width: 100%;
+}
+

@@ -39,7 +39,7 @@ function dodajOglase(){
     for(let i = oglasi.length - 1; i >= 0; i--){
         if(oglasi[i]["korisnik"] != "You") continue;
         let newRow = $("<div></div>").addClass("row")
-        let newCol = $("<div></div>").addClass("col-sm-12")
+        let newCol = $("<div></div>").addClass("offset-md-4").addClass("col-md-4").addClass("col-sm-12")
         bodyDiv.append(newRow);
         newRow.append(newCol);
         bodyDiv.append( $("<hr>"))
@@ -50,28 +50,28 @@ function dodajOglase(){
 
         let newTr = $("<tr></tr>");
         let newTd = $("<td></td>");
-        newTd.text("Pet name: ");
+        newTd.text("Pet name: ").addClass("left");
         newTr.append(newTd);
         newTd = $("<td></td>");
-        newTd.text(oglasi[i]["ime"]);
-        newTr.append(newTd);
-        newTable.append(newTr);
-
-        newTr = $("<tr></tr>");
-        newTd = $("<td></td>");
-        newTd.text("Pet description: ");
-        newTr.append(newTd);
-        newTd = $("<td></td>");
-        newTd.text(oglasi[i]["opis"]);
+        newTd.text(oglasi[i]["ime"]).addClass("right");
         newTr.append(newTd);
         newTable.append(newTr);
 
         newTr = $("<tr></tr>");
         newTd = $("<td></td>");
-        newTd.text("Contact phone: ");
+        newTd.text("Pet description: ").addClass("left");
         newTr.append(newTd);
         newTd = $("<td></td>");
-        newTd.text(oglasi[i]["telefon"]);
+        newTd.text(oglasi[i]["opis"]).addClass("right");
+        newTr.append(newTd);
+        newTable.append(newTr);
+
+        newTr = $("<tr></tr>");
+        newTd = $("<td></td>");
+        newTd.text("Contact phone: ").addClass("left");
+        newTr.append(newTd);
+        newTd = $("<td></td>");
+        newTd.text(oglasi[i]["telefon"]).addClass("right");
         newTr.append(newTd);
         newTable.append(newTr);
 
@@ -85,7 +85,7 @@ function dodajOglase(){
         
 
         newTr.append(newTd);
-        newTd = $("<td></td>");
+        newTd = $("<td></td>").addClass("deleteClass");
 
         deleteButton = $("<button></button>").addClass("btn").addClass("btn-warning").text("Delete");
 
@@ -127,10 +127,10 @@ function prikaziKomentare(td, komentari, novi){
         if(komentari[i]["korisnik"] != "You") continue;
         let newTr = $("<tr></tr>").addClass("red");
         let newTd = $("<td></td>");
-        newTd.text(komentari[i]["korisnik"] + ": ");
+        newTd.text(komentari[i]["vreme"]).addClass("leftCom");
         newTr.append(newTd);
         newTd = $("<td></td>");
-        newTd.text(komentari[i]["tekst"]);
+        newTd.text(komentari[i]["tekst"]).addClass("rightCom");
         newTr.append(newTd);
         newTable.append(newTr);
     }
@@ -154,55 +154,64 @@ function dodajKomentare(){
     for(let i = oglasi.length - 1; i >= 0; i--){
         if(!legalan(oglasi[i]["komentari"])) continue;
         let newRow = $("<div></div>").addClass("row")
-        let newCol = $("<div></div>").addClass("col-sm-12")
+        let newCol = $("<div></div>").addClass("offset-md-4").addClass("col-md-4").addClass("col-sm-12")
         bodyDiv.append(newRow);
         newRow.append(newCol);
         // bodyDiv.append( $("<hr>"))
 
         let newDiv = $("<div></div>");
         newCol.append(newDiv);
-        let newTable = $("<table></table>");
+        let newTable = $("<table></table>").addClass("text-center");
 
         let newTr = $("<tr></tr>");
         let newTd = $("<td></td>");
-        newTd.text("Pet name: ");
+        newTd.text("Pet name: ").addClass("left");
         newTr.append(newTd);
         newTd = $("<td></td>");
-        newTd.text(oglasi[i]["ime"]);
+        newTd.text(oglasi[i]["ime"]).addClass("right");
         newTr.append(newTd);
         newTable.append(newTr);
 
         newTr = $("<tr></tr>");
         newTd = $("<td></td>");
-        newTd.text("Pet description: ");
+        newTd.text("Pet description: ").addClass("left");
         newTr.append(newTd);
         newTd = $("<td></td>");
-        newTd.text(oglasi[i]["opis"]);
+        newTd.text(oglasi[i]["opis"]).addClass("right");
         newTr.append(newTd);
         newTable.append(newTr);
 
         newTr = $("<tr></tr>");
         newTd = $("<td></td>");
-        newTd.text("Contact phone: ");
+        newTd.text("Contact phone: ").addClass("left");
         newTr.append(newTd);
         newTd = $("<td></td>");
-        newTd.text(oglasi[i]["telefon"]);
+        newTd.text(oglasi[i]["telefon"]).addClass("right");
         newTr.append(newTd);
         newTable.append(newTr);
 
-        newDiv.append(newTable);
-
+        newTr = $("<tr></tr>");
+        newTd = $("<td></td>").attr("colspan", 2);
         newButton = $("<button></button>").addClass("btn").addClass("btn-warning").text("Details");
-
-        newDiv.append(newButton);
+        newTr.append(newTd);
+        newTd.append(newButton);
+        newTable.append(newTr);
+        newDiv.append(newTable);
 
         newButton.click(function(){
             localStorage.setItem("id", oglasi[i]["id"]);
             window.location.href = "ad.html";
         })
 
+
+        newTr = $("<tr></tr>");
+        newTd = $("<td></td>").attr("colspan", 2);
+        newTr.append(newTd);
+        newTable.append(newTr);
+        newDiv.append(newTable);
+
         newDiv = $("<div></div>");
-        bodyDiv.append(newDiv);
+        newTd.append(newDiv);
         prikaziKomentare(newDiv, oglasi[i]["komentari"], 0);
         bodyDiv.append($("<hr>"));
     }
