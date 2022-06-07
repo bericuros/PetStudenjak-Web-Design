@@ -107,8 +107,12 @@ footer {
     font-size: 110%;
 }
 
+.tekst_jezik {
+    font-size: 80% !important;
+}
+
 .tekst_jezik:hover {
-    font-size: 105% !important;
+    font-size: 90% !important;
 }
 
 /* ---------- BODY ---------- */
