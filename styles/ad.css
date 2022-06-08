@@ -31,7 +31,7 @@ td {
 }
 
 .you_korisnik {
-    color: blue;
+    font-weight: bold;
     font-style: italic;
 }
 
