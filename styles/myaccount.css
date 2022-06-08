@@ -25,3 +25,8 @@ table{
 .deleteClass{
     text-align: right;
 }
+
+hr {
+    margin-left: 25%;
+    width: 50%;
+}
