@@ -25,3 +25,11 @@
 #lost_a_pet {
     margin-bottom: 40px;
 }
+
+.addad_error {
+    color: red;
+}
+
+.addad_success {
+    color: green;
+}

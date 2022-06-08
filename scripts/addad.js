@@ -34,14 +34,27 @@ function ucitajOglase(){
 function slusajDugme(){
 
     $("#submit").click(function(){
+        $(".addad_error").text("")
+        $(".addad_success").text("")
         
         let ime = $("#name").val();
         let opis = $("#description").val();
         let telefon = $("#phone").val();
 
         if(ime == "" || opis == "" || telefon == ""){
-            alert("All fields must be filled!")
-            return;
+            //alert("All fields must be filled!")
+            $(".addad_error").text("You have to fill out every field!")
+            return
+        }
+
+        if (opis.length < 20) {
+            $(".addad_error").text("The description must have at least 20 characters!")
+            return
+        }
+
+        if (/^\+[0-9]{11,12}$/.test(document.getElementById("phone").value) == false) {
+            $(".addad_error").text("The phone number is not in correct format (+xxxxxxxxxxx(x)")
+            return
         }
 
         let noviOglas = {
@@ -61,8 +74,8 @@ function slusajDugme(){
 
         localStorage.setItem("oglasi", JSON.stringify(oglasi));
 
-        window.location.href = "lostpets.html";
-
+        //window.location.href = "lostpets.html";
+        $(".addad_success").text("The ad is successfully added!")
     })
 
 }

@@ -34,14 +34,27 @@ function ucitajOglase(){
 function slusajDugme(){
 
     $("#submit").click(function(){
+        $(".addad_error").text("")
+        $(".addad_success").text("")
         
         let ime = $("#name").val();
         let opis = $("#description").val();
         let telefon = $("#phone").val();
 
         if(ime == "" || opis == "" || telefon == ""){
-            alert("Sva polja moraju biti popunjena!")
-            return;
+            //alert("All fields must be filled!")
+            $(".addad_error").text("Treba sva polja da budu popunjena!")
+            return
+        }
+
+        if (opis.length < 20) {
+            $(".addad_error").text("Opis mora da sadrži najmanje 20 karaktera!")
+            return
+        }
+
+        if (/^\+[0-9]{11,12}$/.test(document.getElementById("phone").value) == false) {
+            $(".addad_error").text("Kontakt telefon nije u ispravnom formatu! [+xxxxxxxxxxx(x)]")
+            return
         }
 
         let noviOglas = {
@@ -61,8 +74,8 @@ function slusajDugme(){
 
         localStorage.setItem("oglasi", JSON.stringify(oglasi));
 
-        window.location.href = "lostpets.html";
-
+        //window.location.href = "lostpets.html";
+        $(".addad_success").text("Oglas je uspešno dodat!")
     })
 
 }
