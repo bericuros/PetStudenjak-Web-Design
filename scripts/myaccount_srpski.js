@@ -194,7 +194,7 @@ $(document).ready(function(){
     
             newButton.click(function(){
                 localStorage.setItem("id", oglasi[i]["id"]);
-                window.location.href = "ad.html";
+                window.location.href = "ad_srpski.html";
             })
     
     
