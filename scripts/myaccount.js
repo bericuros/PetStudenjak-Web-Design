@@ -1,8 +1,9 @@
 let oglasi = [{
     "ime" : "Dzoni",
-    "opis" : "Nestao mi ker",
-    "telefon" : "+381/63-566-309",
+    "opis" : "Nedavno sam ostao bez psa",
+    "telefon" : "+38163566309",
     "id" : 1,
+    "datum": "18-05-2022 17:42:17",
     "korisnik": "Aki",
     "komentari" : [
         {
@@ -72,6 +73,15 @@ function dodajOglase(){
         newTr.append(newTd);
         newTd = $("<td></td>");
         newTd.text(oglasi[i]["telefon"]).addClass("right");
+        newTr.append(newTd);
+        newTable.append(newTr);
+
+        newTr = $("<tr></tr>");
+        newTd = $("<td></td>");
+        newTd.text("Date: ").addClass("left");
+        newTr.append(newTd);
+        newTd = $("<td></td>");
+        newTd.text(oglasi[i]["datum"]).addClass("right");
         newTr.append(newTd);
         newTable.append(newTr);
 

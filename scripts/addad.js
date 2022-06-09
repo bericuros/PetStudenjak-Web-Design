@@ -57,13 +57,18 @@ function slusajDugme(){
             return
         }
 
+        let today = new Date()
         let noviOglas = {
             "ime" : ime,
             "opis" : opis,
             "telefon" : telefon,
             "id" : poslId,
             "korisnik": "You",
-            "komentari" : []
+            "komentari" : [],
+            "datum": String(today.getDate()).padStart(2, "0") + "-" + 
+                String(today.getMonth() + 1).padStart(2, "0") + "-" + today.getFullYear() + " " + 
+                String(today.getHours()).padStart(2, "0") + ":" + String(today.getMinutes()).padStart(2, "0") + ":" + 
+                String(today.getSeconds()).padStart(2, "0"),
         }
 
         poslId++;

@@ -77,6 +77,15 @@ function dodajOglase(){
 
         newTr = $("<tr></tr>");
         newTd = $("<td></td>");
+        newTd.text("Datum: ").addClass("left");
+        newTr.append(newTd);
+        newTd = $("<td></td>");
+        newTd.text(oglasi[i]["datum"]).addClass("right");
+        newTr.append(newTd);
+        newTable.append(newTr);
+
+        newTr = $("<tr></tr>");
+        newTd = $("<td></td>");
 
         newButton = $("<button></button>").addClass("btn").addClass("btn-warning").text("Detalji");
 
