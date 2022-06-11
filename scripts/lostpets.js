@@ -16,15 +16,13 @@ $(document).ready(function(){
     function dodajOglase(){
     
         let bodyDiv = $("#body")
-        bodyDiv.append( $("<hr>"))
         oglasi = JSON.parse(localStorage.getItem("oglasi"));
         for(let i = oglasi.length - 1; i >= 0; i--){
             bodyDiv = $("#body")
             let newRow = $("<div></div>").addClass("row")
-            let newCol = $("<div></div>").addClass("offset-md-4").addClass("col-md-4").addClass("col-sm-12")
+            let newCol = $("<div></div>").addClass("offset-md-4").addClass("col-md-4").addClass("col-sm-12").append("<hr/>")
             bodyDiv.append(newRow);
             newRow.append(newCol);
-            bodyDiv.append( $("<hr>"))
     
             let newDiv = $("<div></div>").addClass("tableClass");
             newCol.append(newDiv);

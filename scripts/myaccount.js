@@ -24,10 +24,9 @@ $(document).ready(function(){
         for(let i = oglasi.length - 1; i >= 0; i--){
             if(oglasi[i]["korisnik"] != "You") continue;
             let newRow = $("<div></div>").addClass("row")
-            let newCol = $("<div></div>").addClass("offset-md-4").addClass("col-md-4").addClass("col-sm-12")
+            let newCol = $("<div></div>").addClass("offset-md-4").addClass("col-md-4").addClass("col-sm-12").append("<hr/>")
             bodyDiv.append(newRow);
             newRow.append(newCol);
-            bodyDiv.append( $("<hr>"))
     
             let newDiv = $("<div></div>");
             newCol.append(newDiv);
@@ -143,15 +142,13 @@ $(document).ready(function(){
     
     function dodajKomentare(){
         let bodyDiv = $("#mycomms")
-        bodyDiv.append( $("<hr>"))
         oglasi = JSON.parse(localStorage.getItem("oglasi"));
         for(let i = oglasi.length - 1; i >= 0; i--){
             if(!legalan(oglasi[i]["komentari"])) continue;
             let newRow = $("<div></div>").addClass("row")
-            let newCol = $("<div></div>").addClass("offset-md-4").addClass("col-md-4").addClass("col-sm-12")
+            let newCol = $("<div></div>").addClass("offset-md-4").addClass("col-md-4").addClass("col-sm-12").append("<hr/>")
             bodyDiv.append(newRow);
             newRow.append(newCol);
-            // bodyDiv.append( $("<hr>"))
     
             let newDiv = $("<div></div>");
             newCol.append(newDiv);

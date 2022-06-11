@@ -1,25 +1,11 @@
+$(document).ready(function() {
 
-
-$(document).ready(function(){
-    let oglasi = []
-    let poslId = 0
-
-    function ucitajOglase(){
-        if(localStorage.getItem("oglasi") == null){
-            localStorage.setItem("poslId", poslId);
-            localStorage.setItem("oglasi", JSON.stringify(oglasi));
-        }
-        else{
-            oglasi = JSON.parse(localStorage.getItem("oglasi"));
-            poslId = JSON.parse(localStorage.getItem("poslId"));
-        }
-    }
+    dodajOglase()
 
     function dodajOglase(){
-
         let bodyDiv = $("#body")
         oglasi = JSON.parse(localStorage.getItem("oglasi"));
-        for(let i = oglasi.length - 1; i >= 0; i--){
+        for(let i = oglasi.length - 1; i >= oglasi.length - 3; i--){
             bodyDiv = $("#body")
             let newRow = $("<div></div>").addClass("row")
             let newCol = $("<div></div>").addClass("offset-md-4").addClass("col-md-4").addClass("col-sm-12").append("<hr/>")
@@ -79,11 +65,6 @@ $(document).ready(function(){
                 localStorage.setItem("id", oglasi[i]["id"]);
                 window.location.href = "ad_srpski.html";
             })
-
-        
         }
     }
-    
-    ucitajOglase();
-    dodajOglase();
 })

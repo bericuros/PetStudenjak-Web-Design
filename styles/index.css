@@ -162,3 +162,15 @@ footer {
 #karusel {
     margin-top: 40px;
 }
+
+#index_lost_pets {
+    margin-top: 40px;
+}
+
+#index_welcome {
+    margin-top: 30px;
+    margin-bottom: 60px;
+    font-size: 350%;
+    font-weight: bold;
+    font-style: italic;
+}
