@@ -63,6 +63,10 @@ $(document).ready(function(){
             oglasi.push(noviOglas);
     
             localStorage.setItem("oglasi", JSON.stringify(oglasi));
+
+            $("#name").val("");
+            $("#description").val("");
+            $("#phone").val("");
     
             //window.location.href = "lostpets.html";
             $(".addad_success").text("Oglas je uspešno dodat!")
