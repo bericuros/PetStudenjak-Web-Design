@@ -1,3 +1,5 @@
+// ========== OGLASI ====================
+
 let oglasi__2 = [
     {
         "ime" : "Dzoni",
@@ -111,3 +113,21 @@ if (localStorage.getItem("oglasi") == null){
     localStorage.setItem("poslId", poslId__2);
     localStorage.setItem("oglasi", JSON.stringify(oglasi__2));
 }
+
+// ========== BANERI ====================
+
+let baneri__2 = []
+baneri__2.push({"baner": "../images/banner_2.png"})
+baneri__2.push({"baner": "../images/banner_3.png"})
+baneri__2.push({"baner": "../images/banner_4.png"})
+baneri__2.push({"baner": "../images/banner_5.png"})
+baneri__2.push({"baner": "../images/banner_5.jpg"})
+baneri__2.push({"baner": "../images/banner_6.jpg"})
+baneri__2.push({"baner": "../images/banner_7.jpg"})
+baneri__2.push({"baner": "../images/banner_8.jpg"})
+baneri__2.push({"baner": "../images/banner_9.jpg"})
+baneri__2.push({"baner": "../images/banner_10.jpg"})
+banner_count__2 = 0
+
+if (localStorage.getItem("baneri") == null) localStorage.setItem("baneri", JSON.stringify(baneri__2))
+if (localStorage.getItem("banner_count") == null) localStorage.setItem("banner_count", banner_count__2)
