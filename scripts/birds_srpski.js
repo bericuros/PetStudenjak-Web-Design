@@ -11,8 +11,8 @@ $(document).ready(function() {
 
 
     function initialization() {
-        initializeObjects()
         initializeLocalStorage()
+        initializeObjects()
         printData()
 
         $("#sort_button").on({click: function() {
@@ -60,40 +60,13 @@ $(document).ready(function() {
 
 
     function initializeObjects() {
-        birds.push({
-            "name": "Mali papagaj LeBron",
-            "description": "Mali papagaj je bilo koja od mnogih malih do srednjih vrsta papagaja, u više rodova, koja uglavnom ima dugo repno perje.",
-            "weight": 0.1,
-            "age": 27,
-            "link": "parakeet_srpski.html",
-        })
-        birds.push({
-            "name": "Kakadu Kris",
-            "description": "Kakadui su prepoznatljivi po istaknutim grbovima i zakrivljenim kljunovima. Njihovo perje je generalno manje šareno nego kod drugih papagaja, uglavnom belo, sivo ili crno i često sa obojenim crtama na grebenu, obrazima ili repu.",
-            "weight": 0.6,
-            "age": 12,
-            "link": "cockatoo_srpski.html",
-        })
-        birds.push({
-            "name": "Afrički papagaj Dvejn",
-            "description": "Oni su mali papagaji, sa zaobljenim glavama i relativno velikim kljunovima. Sve različite vrste su zelene, mada neke imaju narandžastu, žutu, sivu, crnu ili crvenu na glavi i vratu. Većina zaljubljenih ptica dugačka je pet ili šest inča i teška oko dve unce.",
-            "weight": 0.05,
-            "age": 50,
-            "link": "lovebird_srpski.html",
-        })
-
         sort_type = $("#sort_type").val()
         sort_direction = parseInt($("#sort_direction").val())
-
         sort_birds()
     }
 
     function initializeLocalStorage() {
-        if ("localStorage" in window && window.localStorage !== null) {
-            ls_birds = localStorage.getItem("birds_srpski")
-            if (ls_birds == null) localStorage.setItem("birds_srpski", JSON.stringify(birds))
-            else birds = JSON.parse(localStorage.getItem("birds_srpski"))
-        }
+        birds = JSON.parse(localStorage.getItem("birds_srpski"))
     }
 
     function printData() {

@@ -11,8 +11,8 @@ $(document).ready(function() {
 
 
     function initialization() {
-        initializeObjects()
         initializeLocalStorage()
+        initializeObjects()
         printData()
 
         $("#sort_button").on({click: function() {
@@ -60,40 +60,13 @@ $(document).ready(function() {
 
 
     function initializeObjects() {
-        dogs.push({
-            "name": "Dalmatinac Badi",
-            "description": "Dalmatinac je graciozan pas srednje veličine sa glatkim, mišićavim telom. Rep je prilično dugačak i ima blagu krivinu prema gore. Dlaka je kratka i gusta, sa smeđim ili crnim mrljama na belom. Dalmatinac jako linja, iako je dlaka kratka. Za kontrolu linjanja potrebno je često četkanje.",
-            "weight": 25,
-            "age": 29,
-            "link": "dalmatian_srpski.html",
-        })
-        dogs.push({
-            "name": "Korgi Koko",
-            "description": "Pembroke velški korgi je pastirski pas male do srednje veličine, niskog rasta i čvrste građe. Poznat po svom nisko postavljenom telu, velikim uspravnim ušima i zdepastom repu, Pembroke takođe ima reputaciju kao divan saputnik. Pembroke velški korgi su ahondroplastični, patuljasta rasa sa skraćenim nogama.",
-            "weight": 12,
-            "age": 72,
-            "link": "corgi_srpski.html",
-        })
-        dogs.push({
-            "name": "Labrador Roki",
-            "description": "Labrador retrivere je lako prepoznati po širokoj glavi, spuštenim ušima i velikim, izražajnim očima. Dva zaštitna znaka Lab-a su gusta, ali prilično kratka dvostruka dlaka, koja je veoma vodoodbojna, i dobro poznati „rep vidre“. Rep je debeo i čvrst i skoro ravan se spušta sa gornje linije.",
-            "weight": 30,
-            "age": 50,
-            "link": "labrador_srpski.html",
-        })
-
         sort_type = $("#sort_type").val()
         sort_direction = parseInt($("#sort_direction").val())
-
         sort_dogs()
     }
 
     function initializeLocalStorage() {
-        if ("localStorage" in window && window.localStorage !== null) {
-            ls_dogs = localStorage.getItem("dogs_srpski")
-            if (ls_dogs == null) localStorage.setItem("dogs_srpski", JSON.stringify(dogs))
-            else dogs = JSON.parse(localStorage.getItem("dogs_srpski"))
-        }
+        dogs = JSON.parse(localStorage.getItem("dogs_srpski"))
     }
 
     function printData() {

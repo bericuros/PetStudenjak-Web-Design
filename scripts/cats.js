@@ -11,8 +11,8 @@ $(document).ready(function() {
 
 
     function initialization() {
-        initializeObjects()
         initializeLocalStorage()
+        initializeObjects()
         printData()
 
         $("#sort_button").on({click: function() {
@@ -60,40 +60,13 @@ $(document).ready(function() {
 
 
     function initializeObjects() {
-        cats.push({
-            "name": "Persian Ronnie",
-            "description": "Persian cats are medium-sized, usually weigh between seven and 12 pounds, and measure from 10-15 inches tall. They have a rounded head, small, rounded ears, and big eyes. They also typically have a flat and pushed-in looking face with chubby cheeks.",
-            "weight": 4.2,
-            "age": 37,
-            "link": "persian.html",
-        })
-        cats.push({
-            "name": "Bengal Jay",
-            "description": "Bengal cats have smallish, round heads, large eyes, and striking facial marking. They have strong muscular bodies and a streamlined appearance much like their Asian Leopard ancestors. Their hind legs are longer than their front legs, which helps give them a powerful but graceful stride.",
-            "weight": 3.5,
-            "age": 39,
-            "link": "bengal.html",
-        })
-        cats.push({
-            "name": "Maine Coon Dexter",
-            "description": "The Maine Coon is a large and sociable cat, hence its nickname, \"the gentle giant.\" It is characterized by a prominent ruff along its chest, robust bone structure, rectangular body shape, an uneven two-layered coat with longer guard hairs over a silky satin undercoat, and a long, bushy tail.",
-            "weight": 7,
-            "age": 98,
-            "link": "mainecoon.html",
-        })
-
         sort_type = $("#sort_type").val()
         sort_direction = parseInt($("#sort_direction").val())
-
         sort_cats()
     }
 
     function initializeLocalStorage() {
-        if ("localStorage" in window && window.localStorage !== null) {
-            ls_cats = localStorage.getItem("cats")
-            if (ls_cats == null) localStorage.setItem("cats", JSON.stringify(cats))
-            else cats = JSON.parse(localStorage.getItem("cats"))
-        }
+        cats = JSON.parse(localStorage.getItem("cats"))
     }
 
     function printData() {

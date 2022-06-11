@@ -11,8 +11,8 @@ $(document).ready(function() {
 
 
     function initialization() {
-        initializeObjects()
         initializeLocalStorage()
+        initializeObjects()
         printData()
 
         $("#sort_button").on({click: function() {
@@ -60,40 +60,13 @@ $(document).ready(function() {
 
 
     function initializeObjects() {
-        birds.push({
-            "name": "Parakeet LeBron",
-            "description": "A parakeet is any one of many small to medium-sized species of parrot, in multiple genera, that generally has long tail feathers.",
-            "weight": 0.1,
-            "age": 27,
-            "link": "parakeet.html",
-        })
-        birds.push({
-            "name": "Cockatoo Chris",
-            "description": "Cockatoos are recognisable by the prominent crests and curved bills. Their plumage is generally less colourful than that of other parrots, being mainly white, grey or black and often with coloured features in the crest, cheeks or tail.",
-            "weight": 0.6,
-            "age": 12,
-            "link": "cockatoo.html",
-        })
-        birds.push({
-            "name": "Lovebird Dwyane",
-            "description": "They are small parrots, with rounded heads and relatively large beaks. All of the different species are green, though some have orange, yellow, gray, black, or red on their heads and necks. Most Lovebirds are five or six inches long, and weigh about two ounces.",
-            "weight": 0.05,
-            "age": 50,
-            "link": "lovebird.html",
-        })
-
         sort_type = $("#sort_type").val()
         sort_direction = parseInt($("#sort_direction").val())
-
         sort_birds()
     }
 
     function initializeLocalStorage() {
-        if ("localStorage" in window && window.localStorage !== null) {
-            ls_birds = localStorage.getItem("birds")
-            if (ls_birds == null) localStorage.setItem("birds", JSON.stringify(birds))
-            else birds = JSON.parse(localStorage.getItem("birds"))
-        }
+        birds = JSON.parse(localStorage.getItem("birds"))
     }
 
     function printData() {
