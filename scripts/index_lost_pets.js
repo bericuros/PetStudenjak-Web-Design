@@ -14,7 +14,7 @@ $(document).ready(function() {
     
             let newDiv = $("<div></div>").addClass("tableClass");
             newCol.append(newDiv);
-            let newTable = $("<table></table>").addClass("text-center");
+            let newTable = $("<table></table>").addClass("text-center").addClass("tabela");
     
             let newTr = $("<tr></tr>");
             let newTd = $("<td></td>");
