@@ -100,44 +100,6 @@ $(document).ready(function(){
             row.append(col_two)
             table.append(row)
         }
-    }
-
-    /*
-
-    newDiv = $("<div></div>");
-    
-
-
-    newDiv.append($("<textarea>").attr("cols", 30).attr("rows", 3).attr("id", "comtext"));
-        
-
-    newDiv.append("<br>");
-
-    let newButton = $("<button></button>").text("Add comment").attr("id", "addcomment")
-    newDiv.append(newButton);
-
-    newButton.click(function(){
-        let korisnik = "You";
-        let tekst = $("#comtext").val();
-        if(tekst != ""){
-            oglas["komentari"].push({
-                "korisnik" : korisnik,
-                "tekst" : tekst
-            });
-            localStorage.setItem("oglasi", JSON.stringify(oglasi));
-            prikaziKomentare($("#comdiv"), oglas["komentari"], 1);
-            $("#comtext").val("");
-        }
-    })
-
-    bodyDiv.append(newDiv);
-
-    newDiv = $("<div></div>").text("Comments:");
-    bodyDiv.append(newDiv);
-
-    newDiv = $("<div></div>").attr("id", "comdiv");
-    bodyDiv.append(newDiv);
-    prikaziKomentare(newDiv, oglas["komentari"], 0);
-  */  
+    } 
 
 })
