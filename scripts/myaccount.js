@@ -19,7 +19,6 @@ $(document).ready(function(){
     function dodajOglase(){
     
         let bodyDiv = $("#myads")
-        bodyDiv.append( $("<hr>"))
         oglasi = JSON.parse(localStorage.getItem("oglasi"));
         for(let i = oglasi.length - 1; i >= 0; i--){
             if(oglasi[i]["korisnik"] != "You") continue;
@@ -204,7 +203,6 @@ $(document).ready(function(){
             newDiv = $("<div></div>");
             newTd.append(newDiv);
             prikaziKomentare(newDiv, oglasi[i]["komentari"], 0);
-            bodyDiv.append($("<hr>"));
         }
     }
 

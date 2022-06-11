@@ -24,3 +24,11 @@ table{
 .deleteClass{
     text-align: right;
 }
+
+#myaccount_ads {
+    margin-top: 10px;
+}
+
+#myaccount_comments {
+    margin-top: 50px;
+}
